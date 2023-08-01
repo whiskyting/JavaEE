@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+</head>
+<script>
+    $(() => {
+        $('#bar')
+        .progressbar()
+        .find('.ui-widget-header')
+        .css('background-color','lightyellow')
+
+        $('#slider').slider({
+            slide:function(event,ui){
+                $('#bar').progressbar('value',ui.value)
+                $('.ui-slider-handle').text(ui.value)
+                $('.label').text(`${ui.value}%`)
+            }
+        })
+
+    })
+
+
+</script>
+<style>
+    .progressbar {
+        position: relative;
+        width: 200pt;
+        background-color: bisque;
+    }
+    .label {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform:translate(-50%, -50%);
+    }
+    </style>
+    
+
+<body>
+    <div class="progressbar">
+        <div id="bar"></div>
+        <div class="label">0%</div>
+    </div>
+    
+    <p></p>
+
+    <div id="slider" style="margin: 20px;">
+        <div class="ui-slider-handle">0</div>
+    </div>
+
+</body>
+
+</html>
