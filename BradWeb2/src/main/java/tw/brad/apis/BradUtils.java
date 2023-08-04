@@ -1,9 +1,7 @@
 package tw.brad.apis;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileReader;
 
 public class BradUtils {
 	public static String loadview(String view) throws Exception {
@@ -67,5 +65,8 @@ public class BradUtils {
 	}
 	public static Member createMember() {
 		return new Member(123, "iii", "III", "1999-09-08");
+	}	
+	public static String createScore() {
+		return (int)(Math.random()*101)+"";
 	}	
 }
